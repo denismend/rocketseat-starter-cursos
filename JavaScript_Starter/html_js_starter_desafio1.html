@@ -1,0 +1,79 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Curso JavaScript</title>
+</head>
+
+<body>
+  <button id="buttonAddSquare">Add Square</button>
+
+  <div id="app" style="display: flex; flex-flow: wrap;">
+
+  </div>
+
+  <input type="text" name="nome">
+  <button onClick="addNewNameInList()" style="margin-bottom: 10px;">Adicionar</button>
+
+  <script>
+    var btnAddSquare = document.querySelector('#buttonAddSquare');
+    var mainDiv = document.querySelector('#app');
+
+    btnAddSquare.style.marginBottom = 10;
+
+    btnAddSquare.onclick = function () {
+      var square = document.createElement('div');
+      square.style.width = 100;
+      square.style.height = 100;
+      square.style.backgroundColor = '#f00';
+      square.style.marginRight = 5;
+      square.style.marginBottom = 5;
+      square.onmouseover = function () {
+        var newColor = getRandomColor();
+        square.style.backgroundColor = newColor;
+      }
+
+      mainDiv.appendChild(square);
+    }
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // add ul in table
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+
+    nomes.forEach(nome => {
+      newUlItem(nome);
+    });
+
+    function newUlItem(name) {
+      var x = document.createElement("ul");
+      x.setAttribute("id", name);
+      x.style.margin = 0;
+      document.body.appendChild(x);
+
+      var y = document.createElement("li");
+      var t = document.createTextNode(name);
+      y.appendChild(t);
+
+      document.querySelector('#' + name).appendChild(y);
+    };
+
+    function addNewNameInList() {
+      var inputName = document.querySelector('input[name=nome]');
+      newUlItem(inputName.value);
+
+      inputName.value = '';
+    }
+
+
+  </script>
+</body>
+
+</html>
