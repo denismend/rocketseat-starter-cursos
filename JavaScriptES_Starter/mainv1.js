@@ -1,0 +1,39 @@
+class List {
+  constructor() {
+    this.data = [];
+  }
+
+  add(data) {
+    this.data.push(data);
+    console.log(this.data);
+  }
+}
+
+class TodoList extends List { 
+  constructor() {
+    super();
+
+    this.usuario = 'Denis';
+  }
+
+  mostraUsuario() {
+    console.log(this.usuario);
+  }
+}
+
+var minhaLista = new TodoList();
+document.getElementById('novotodo').onclick = function() {
+  minhaLista.add('Novo Todo');
+}
+
+/*alert('Teste');
+
+class Teste {
+  metodo() {
+
+  }
+
+  outro() {
+
+  }
+} */
