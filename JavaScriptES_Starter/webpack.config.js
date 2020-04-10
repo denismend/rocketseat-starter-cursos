@@ -1,8 +1,11 @@
 module.exports = {
-  entry: './mainwp.js',
+  entry: './src/mainwp.js',
   output: {
-    path: __dirname,
+    path: __dirname + '/public',
     filename: 'bundlewp.js'
+  },
+  devServer: {
+    contentBase: __dirname + '/public'
   },
   module: {
     rules: [
