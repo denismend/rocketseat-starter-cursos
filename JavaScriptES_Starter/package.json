@@ -7,6 +7,8 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/plugin-transform-async-to-generator": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.9.5",
     "babel-loader": "^8.1.0",
     "webpack": "^4.42.1",
@@ -14,7 +16,10 @@
     "webpack-dev-server": "^3.10.3"
   },
   "scripts": {
-    "dev": "babel ./desafio1.js -o bundle.js -w",
-    "devwp": "webpack-dev-server --mode=development"
+    "dev": "babel ./desafio2.js -o bundle.js -w",
+    "devwp": "webpack-dev-server --mode=production"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
   }
 }

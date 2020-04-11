@@ -1,8 +1,8 @@
 module.exports = {
-  entry: './src/mainwp.js',
+  entry: ['@babel/polyfill', './src/mainwp.js'],
   output: {
     path: __dirname + '/public',
-    filename: 'bundlewp.js'
+    filename: 'bundlewp.js',
   },
   devServer: {
     contentBase: __dirname + '/public'
