@@ -20,6 +20,6 @@
     "devwp": "webpack-dev-server --mode=production"
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   }
 }
